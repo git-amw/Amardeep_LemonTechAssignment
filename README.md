@@ -2,4 +2,4 @@
 
 This project will bootstrap on **Index.cshtml** 
 
-![](../AssignmentIMAGES/A1.png)
+![Here](/master/AssignmentIMAGES/A1.png)
