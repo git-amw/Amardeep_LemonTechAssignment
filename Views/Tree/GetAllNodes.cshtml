@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Node>
+
+<table class="table table-hover caption-top">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Node Name</th>
+            <th>Parent Node Id</th>
+            <th>Is Active</th>
+            <th>Start Date</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Node it in Model)
+        {
+            <tr>
+                <td>@it.NodeId</td>
+                <td>@it.NodeName</td>
+                <td>@it.ParentNodeId</td>
+                <td>@it.IsActive</td>
+                <td>@it.StartDate</td>
+                <td>
+                    <a class="btn btn-outline-warning" asp-controller="Tree" asp-action="UpdateNode" asp-route-id="@it.NodeId">Update</a> &nbsp; &nbsp;
+                    <a class="btn btn-outline-danger" asp-controller="Tree" asp-action="DeleteNode" asp-route-id="@it.NodeId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

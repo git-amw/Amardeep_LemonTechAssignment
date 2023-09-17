@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Node>
+
+
+<div class="row pt-2">
+    <h2>All Parents Node</h2>
+    <span>(Parents node are those nodes whose parentId is NULL)</span>
+</div>
+<ul class="list-group pt-3">
+    @foreach (var it in Model)
+    {
+        <a asp-controller="Tree" asp-action="TreeView" asp-route-id="@it.NodeId">
+          <div class="list-group pt-2">
+                <button id="renderButton" type="button" class="list-group-item list-group-item-action">Parent NodeId : @it.NodeId</button>
+          </div>
+        </a>
+
+    }
+</ul>

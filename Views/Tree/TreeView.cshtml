@@ -1,0 +1,19 @@
+﻿@model List<Tree>
+
+<div class="row pt-3 pb-3">
+    <h2> Tree structure </h2>
+    <span>(If parent node does not have any childern than NO Tree will be generated)</span>
+</div>
+
+<ul>
+    @foreach (var node in Model)
+    {
+        <li>
+            <span> @node.Name</span>
+            @if (node.Children.Any())
+            {
+                 @Html.Partial("_ChildNodes", node.Children)  
+            }
+        </li>
+    }
+</ul>

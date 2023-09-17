@@ -1,0 +1,20 @@
+﻿@model List<Tree>
+
+<ul>
+   @* <li>*@
+        @foreach (var node in Model)
+        {
+
+        <li>
+            <span> @node.Name </span>
+                @if (node.Children.Any())
+                {
+                <ul>
+                        @*@Html.DisplayFor(m => node.Children)*@
+                        @Html.Partial("_ChildNodes", node.Children)
+                </ul>
+                }
+        </li>
+        }
+    @*</li>*@
+</ul>
